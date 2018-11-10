@@ -20,7 +20,7 @@ enum HTTPServiceError: Error {
     case JSONSerializationError
 }
 
-// HTTPService class implementation
+// This class class provides access to HTTP services and allows the app to request image data from NASA's REST api.
 class HTTPService {
     
     var delegate: HTTPServiceDelegate?
@@ -55,7 +55,7 @@ class HTTPService {
                 } catch let jsonErr {
                     // if error decoding JSON data, pass error back to delegate
                     print("Failed to decode json data: \(jsonErr)")
-//                    self.delegate?.finishedHTTPWeatherDataRequest(err: HTTPServiceError.JSONSerializationError, weatherData: nil)
+//                    self.delegate?.finishedHTTPDataRequest(err: HTTPServiceError.JSONSerializationError, weatherData: nil)
                 }
         }
     }

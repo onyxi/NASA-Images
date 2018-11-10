@@ -1,24 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="41F-hA-ycg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ImageListView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imageListView" title="ImageListView" id="BYZ-38-t0r" customClass="ImageListViewController" customModule="NASA_Images" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlF-Zs-ovQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rV0-fo-Nzf"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="ETM-QC-0fp"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="en8-kk-Di8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="250" id="zaW-wJ-KI1" customClass="ImageCell" customModule="NASA_Images" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zaW-wJ-KI1" id="NVv-2T-F4S">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-TC-clP">
+                                                    <rect key="frame" x="15" y="11" width="345" height="228"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hubble Observes One-of-a-Kind Star Nicknamed 'Nasty'" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zti-xK-FXn">
+                                                    <rect key="frame" x="31" y="142" width="313" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="mMe-lG-8Ep"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GSFC  |  2015-03-21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg1-mq-eXF">
+                                                    <rect key="frame" x="31" y="202" width="313" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="oyu-E0-Jx4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgt-TX-cnE">
+                                                    <rect key="frame" x="15" y="11" width="345" height="228"/>
+                                                    <connections>
+                                                        <action selector="cellButtonTapped:" destination="zaW-wJ-KI1" eventType="touchUpInside" id="VkS-a9-1fx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zgt-TX-cnE" firstAttribute="trailing" secondItem="NVv-2T-F4S" secondAttribute="trailingMargin" id="1Bk-W3-gpD"/>
+                                                <constraint firstItem="zgt-TX-cnE" firstAttribute="top" secondItem="NVv-2T-F4S" secondAttribute="topMargin" id="1XS-DW-lvg"/>
+                                                <constraint firstItem="zgt-TX-cnE" firstAttribute="leading" secondItem="NVv-2T-F4S" secondAttribute="leadingMargin" id="7nY-Ln-tTk"/>
+                                                <constraint firstItem="wg1-mq-eXF" firstAttribute="top" secondItem="zti-xK-FXn" secondAttribute="bottom" id="86Z-F3-ygV"/>
+                                                <constraint firstItem="e9R-TC-clP" firstAttribute="leading" secondItem="NVv-2T-F4S" secondAttribute="leadingMargin" id="FJS-DE-6xB"/>
+                                                <constraint firstItem="e9R-TC-clP" firstAttribute="top" secondItem="NVv-2T-F4S" secondAttribute="topMargin" id="G47-Hh-CvA"/>
+                                                <constraint firstItem="zti-xK-FXn" firstAttribute="leading" secondItem="NVv-2T-F4S" secondAttribute="leadingMargin" constant="16" id="JXw-Ze-TbM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wg1-mq-eXF" secondAttribute="bottom" constant="16" id="Q9M-1Z-KxH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e9R-TC-clP" secondAttribute="trailing" id="S7u-e2-gTe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zti-xK-FXn" secondAttribute="trailing" constant="16" id="aUU-wj-1c4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wg1-mq-eXF" secondAttribute="trailing" constant="16" id="gbS-0f-Qmm"/>
+                                                <constraint firstItem="zgt-TX-cnE" firstAttribute="bottom" secondItem="NVv-2T-F4S" secondAttribute="bottomMargin" id="gfP-Og-HRt"/>
+                                                <constraint firstItem="wg1-mq-eXF" firstAttribute="leading" secondItem="NVv-2T-F4S" secondAttribute="leadingMargin" constant="16" id="pmG-4B-PHz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e9R-TC-clP" secondAttribute="bottom" id="r35-4E-dZM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="NASAImageView" destination="e9R-TC-clP" id="HGs-yO-Xju"/>
+                                            <outlet property="imageCenterAndDateLabel" destination="wg1-mq-eXF" id="nqz-z8-Gww"/>
+                                            <outlet property="imageTitleLabel" destination="zti-xK-FXn" id="N6o-F3-pUm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rlF-Zs-ovQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1yK-iK-GS9"/>
+                            <constraint firstItem="rlF-Zs-ovQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="64H-xI-XRQ"/>
+                            <constraint firstItem="en8-kk-Di8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fp0-Ne-3oo"/>
+                            <constraint firstItem="en8-kk-Di8" firstAttribute="top" secondItem="rlF-Zs-ovQ" secondAttribute="bottom" id="KxR-NP-mVT"/>
+                            <constraint firstItem="rlF-Zs-ovQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PvY-6c-mL2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="en8-kk-Di8" secondAttribute="trailing" id="Sqd-Dx-IhX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="en8-kk-Di8" secondAttribute="bottom" id="mLa-cY-fHR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="The Milky Way" id="rUT-bS-1tF"/>
+                    <connections>
+                        <outlet property="navBarTitle" destination="ETM-QC-0fp" id="zRh-5G-TJ4"/>
+                        <outlet property="tableView" destination="en8-kk-Di8" id="mYu-30-qPw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2954.4000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sQ1-qP-T6v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="41F-hA-ycg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K3N-gn-ZHP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rVN-FX-hxn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRW-NA-R41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.2" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="space" width="1519" height="1000"/>
+    </resources>
 </document>

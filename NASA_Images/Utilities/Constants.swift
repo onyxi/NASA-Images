@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This struct provides constant values
 struct Constants {
     
     // Define constant values:

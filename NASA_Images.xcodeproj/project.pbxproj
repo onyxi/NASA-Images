@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DD9EEB6D554BAE9C60198CA /* Pods_NASA_Images.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61521C61EFD9267F6C7B5505 /* Pods_NASA_Images.framework */; };
 		C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2642196EA5900D5855B /* AppDelegate.swift */; };
-		C117D2672196EA5900D5855B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2662196EA5900D5855B /* ViewController.swift */; };
+		C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2662196EA5900D5855B /* ImageListViewController.swift */; };
 		C117D26A2196EA5900D5855B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C117D2682196EA5900D5855B /* Main.storyboard */; };
 		C117D26C2196EA5A00D5855B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C117D26B2196EA5A00D5855B /* Assets.xcassets */; };
 		C117D26F2196EA5A00D5855B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C117D26D2196EA5A00D5855B /* LaunchScreen.storyboard */; };
@@ -17,6 +17,10 @@
 		C117D2852196EA5B00D5855B /* NASA_ImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2842196EA5B00D5855B /* NASA_ImagesUITests.swift */; };
 		C117D2992196EF3800D5855B /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2972196EF3800D5855B /* HTTPService.swift */; };
 		C117D29A2196EF3800D5855B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2982196EF3800D5855B /* Constants.swift */; };
+		C117D29C2196F9A000D5855B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D29B2196F9A000D5855B /* ImageCell.swift */; };
+		C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DB2197119B00D5855B /* NASAImageData.swift */; };
+		C117D2DE219713D800D5855B /* DevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DD219713D800D5855B /* DevData.swift */; };
+		C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,7 @@
 		9953C26E9294C8B7B0500DAB /* Pods-NASA_Images.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA_Images.release.xcconfig"; path = "Pods/Target Support Files/Pods-NASA_Images/Pods-NASA_Images.release.xcconfig"; sourceTree = "<group>"; };
 		C117D2612196EA5800D5855B /* NASA_Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASA_Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C117D2642196EA5900D5855B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C117D2662196EA5900D5855B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C117D2662196EA5900D5855B /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		C117D2692196EA5900D5855B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C117D26B2196EA5A00D5855B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C117D26E2196EA5A00D5855B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +59,10 @@
 		C117D2862196EA5B00D5855B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C117D2972196EF3800D5855B /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		C117D2982196EF3800D5855B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C117D29B2196F9A000D5855B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		C117D2DB2197119B00D5855B /* NASAImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImageData.swift; sourceTree = "<group>"; };
+		C117D2DD219713D800D5855B /* DevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevData.swift; sourceTree = "<group>"; };
+		C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +159,7 @@
 		C117D2922196EEAB00D5855B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C117D2662196EA5900D5855B /* ViewController.swift */,
+				C117D2662196EA5900D5855B /* ImageListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			children = (
 				C117D2982196EF3800D5855B /* Constants.swift */,
 				C117D2972196EF3800D5855B /* HTTPService.swift */,
+				C117D2DD219713D800D5855B /* DevData.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 		C117D2942196EEDF00D5855B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C117D2DB2197119B00D5855B /* NASAImageData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +185,7 @@
 		C117D2952196EEE800D5855B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C117D29B2196F9A000D5855B /* ImageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 		C117D2962196EEF400D5855B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -332,10 +344,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NASA_Images/Pods-NASA_Images-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,10 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C117D2DE219713D800D5855B /* DevData.swift in Sources */,
 				C117D2992196EF3800D5855B /* HTTPService.swift in Sources */,
-				C117D2672196EA5900D5855B /* ViewController.swift in Sources */,
+				C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */,
 				C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */,
+				C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */,
 				C117D29A2196EF3800D5855B /* Constants.swift in Sources */,
+				C117D29C2196F9A000D5855B /* ImageCell.swift in Sources */,
+				C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
