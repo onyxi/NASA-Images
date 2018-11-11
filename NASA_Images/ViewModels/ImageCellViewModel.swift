@@ -8,20 +8,20 @@
 
 import Foundation
 
-// This class takes a NASAImageData object and performs useful transformations to provide usable values for direct use in a viewcontroller's UI outlets.
+// This class takes a NASAImageData object and performs useful transformations to provide usable values for direct use in a ImageCell's UI outlets.
 class ImageCellViewModel {
     
     let imageURL: URL!
     let title: String!
     let description: String!
-    let centreAndDate: String!
+    let centerAndDate: String!
     
     // Initializer uses helper methods to transform given NASAImageData and assign produced values to self
     init(imageData: NASAImageData) {
         self.imageURL = ImageCellViewModel.buildImageUrl(from: imageData.imageURLString)
         self.title = imageData.title
         self.description = imageData.description
-        self.centreAndDate = ImageCellViewModel.buildCenterAndDateString(from: imageData.center, and: imageData.dateCreated)
+        self.centerAndDate = ImageCellViewModel.buildCenterAndDateString(from: imageData.center, and: imageData.dateCreated)
     }
 
     // This method returns a URL object from a given String

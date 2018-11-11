@@ -21,6 +21,9 @@
 		C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DB2197119B00D5855B /* NASAImageData.swift */; };
 		C117D2DE219713D800D5855B /* DevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DD219713D800D5855B /* DevData.swift */; };
 		C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */; };
+		C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E32197330700D5855B /* ImageDetailsViewController.swift */; };
+		C117D2E6219734BF00D5855B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E5219734BF00D5855B /* BackButton.swift */; };
+		C117D2EA219754E800D5855B /* ImageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		C117D2DB2197119B00D5855B /* NASAImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImageData.swift; sourceTree = "<group>"; };
 		C117D2DD219713D800D5855B /* DevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevData.swift; sourceTree = "<group>"; };
 		C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
+		C117D2E32197330700D5855B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDetailsViewController.swift; path = ../../../../.Trash/ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		C117D2E5219734BF00D5855B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C117D2662196EA5900D5855B /* ImageListViewController.swift */,
+				C117D2E32197330700D5855B /* ImageDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				C117D29B2196F9A000D5855B /* ImageCell.swift */,
+				C117D2E5219734BF00D5855B /* BackButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */,
+				C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -384,8 +393,11 @@
 				C117D2DE219713D800D5855B /* DevData.swift in Sources */,
 				C117D2992196EF3800D5855B /* HTTPService.swift in Sources */,
 				C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */,
+				C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */,
+				C117D2E6219734BF00D5855B /* BackButton.swift in Sources */,
 				C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */,
 				C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */,
+				C117D2EA219754E800D5855B /* ImageDetailsViewModel.swift in Sources */,
 				C117D29A2196EF3800D5855B /* Constants.swift in Sources */,
 				C117D29C2196F9A000D5855B /* ImageCell.swift in Sources */,
 				C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */,

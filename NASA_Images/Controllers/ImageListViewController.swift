@@ -15,7 +15,8 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     
-    // Hold View-Models for populating tableView cells:
+    // Hold fetched Image Data and View-Models:
+    var imagesData = [NASAImageData]()
     var imageCellViewModels = [ImageCellViewModel]()
     
     // When viewController loads configure tableView and request to download new data
@@ -30,17 +31,25 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // This method requests new data for the tableView
     func getImagesData(){
-        let imagesData = DevData().NASAImagesData
+        imagesData = DevData().NASAImagesData
         for imageData in imagesData {
             imageCellViewModels.append(ImageCellViewModel(imageData: imageData))
         }
         tableView.reloadData()
     }
     
-    // This method registers a user's tap on a tableView cell.
+    // This method registers a user's tap on a tableView cell and shows image details in a presented ViewController
     func imageCellTapped(row: Int) {
-        print("cell tapped on row: \(row)")
-        // show image details from here:
+        
+        // get destination vc
+        guard
+        let imageDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "imageDetailsView") as? ImageDetailsViewController,
+        let navigator = navigationController
+        else { return }
+        
+        // set destination vc properties and present here:
+        imageDetailsViewController.imageData = imagesData[row]
+        navigator.pushViewController(imageDetailsViewController, animated: true)
     }
     
 
@@ -55,7 +64,7 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
             
             // return a configured ImageCell - assigning this viewController as delegate and setting the cell's ImageCellViewModel property to the corresponding object in this viewControllers array of ImageCellViewModel objects. The cell's tag is also set to the corresponding row in the tableView to enable identification when calling delegate methods.
             let imageCell = tableView.dequeueReusableCell(withIdentifier: "imageCell") as! ImageCell
-            imageCell.imageCellViewModel = imageCellViewModels[indexPath.row - 1]
+            imageCell.imageViewModel = imageCellViewModels[indexPath.row - 1]
             imageCell.delegate = self
             imageCell.tag = indexPath.row - 1
             return imageCell
@@ -78,6 +87,11 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             return 250
         }
+    }
+    
+    // This method sets the NavigationBar title before the Viewcontroller is displayed
+    override func viewWillAppear(_ animated: Bool) {
+       navBarTitle.title = "The Milky Way"
     }
 
 

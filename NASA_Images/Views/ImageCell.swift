@@ -24,12 +24,12 @@ class ImageCell: UITableViewCell {
     
     var delegate: ImageCellDelegate!
     
-    // When this imageCellViewModel variable is set, the cell's UI outlets are updated with the set object's properties
-    var imageCellViewModel: ImageCellViewModel? {
+    // When this imageCellViewModel variable is set, the cell's UI outlets are set to the object's properties
+    var imageViewModel: ImageCellViewModel? {
         didSet {
-            NASAImageView.kf.setImage(with: imageCellViewModel?.imageURL)
-            imageTitleLabel.text = imageCellViewModel?.title
-            imageCenterAndDateLabel.text = imageCellViewModel?.centreAndDate
+            NASAImageView.kf.setImage(with: imageViewModel?.imageURL)
+            imageTitleLabel.text = imageViewModel?.title
+            imageCenterAndDateLabel.text = imageViewModel?.centerAndDate
         }
     }
     
