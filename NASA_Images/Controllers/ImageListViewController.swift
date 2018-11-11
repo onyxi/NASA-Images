@@ -15,6 +15,8 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     // UI Outlets:
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageView: MessageView!
+    
     
     // Hold fetched Image Data and View-Models:
     var imagesData = [NASAImageData]()
@@ -22,7 +24,7 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var httpService: HTTPService?
     
-    // When viewController loads configure tableView and httpService instance before requesting to download new data
+    // When viewController loads configure tableView and httpService instances before requesting to download new data
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,28 +34,44 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
         httpService = HTTPService()
         httpService?.delegate = self
         
+        messageView.setMessageNoDataAvailable()
         getImagesData()
     }
     
     
-    // This method requests new data for the tableView
+    // This method displays a message to inform the user that data is being loaded and requests new data for the tableView
     func getImagesData(){
-        
+        messageView.setMessageLoadingData()
+        messageView.show()
         httpService?.getData()
-        
     }
     
     
     // This method handles the response from a request to the HTTPService class. If data was successfully returned, it is assigned to this ViewController's main scope and used to instantiate ImageCellViewModel objects, which are appended to the main scope's imageCellViewModels array. The tableView is finally called to reload its data - drawing from the newly created NASAImageDataViewModel objects.
     func finishedHTTPDataRequest(err: HTTPServiceError?, data: AnyObject?) {
         
-        if let responseImagesData = data as? [NASAImageData] {
-            imagesData = responseImagesData
-            for imageData in responseImagesData {
-                imageCellViewModels.append(ImageCellViewModel(imageData: imageData))
-            }
+        // check for errors
+        if err != nil {
+            // if error found display message and show alert
+            messageView.setMessageNoDataAvailable()
+            showAlert(error: err!)
+            return
+        }
+        
+        // If no valid results returned, inform user that no data is available
+        guard let responseImagesData = data as? [NASAImageData], !responseImagesData.isEmpty else {
+            messageView.setMessageNoDataAvailable()
+            return
+        }
+        
+        // instanciate and assign ViewModels from results, and reload table
+        imagesData = responseImagesData
+        for imageData in responseImagesData {
+            imageCellViewModels.append(ImageCellViewModel(imageData: imageData))
         }
         tableView.reloadData()
+        messageView.hide()
+    
     }
     
     
@@ -111,7 +129,6 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     
-    
     // This method removes the grey 'selection' formatting when cell's are tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -122,6 +139,40 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
        navBarTitle.title = "The Milky Way"
     }
 
+    
 
+    
+    // This method displays an apprporiate alert to the user - based on the type of a given Error
+    private func showAlert(error: Error){
+        
+        // Alerts for network/http errors
+        if let httpErr = error as? HTTPServiceError {
+            switch httpErr {
+                
+            case .DownloadError:
+                let alert = UIAlertController(title: "Download Error", message: "Unable to fetch new data. Please check your network connection and try again.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { _ in
+                    self.getImagesData()
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            case .JSONSerializationError:
+                let alert = UIAlertController(title: "Data Error", message: "There was a problem reading the image data, press refresh to try again.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: { _ in
+                    self.getImagesData()
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+            return
+        }
+        
+    }
+    
+
+    
+    
+    
 }
 

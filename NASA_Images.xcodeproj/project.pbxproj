@@ -27,6 +27,7 @@
 		C13DDB1521987F280079042F /* ImageDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */; };
 		C13DDB17219895950079042F /* HTTPServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB16219895950079042F /* HTTPServiceTests.swift */; };
 		C13DDB192198990B0079042F /* NASA_JSON_Stub.json in Resources */ = {isa = PBXBuildFile; fileRef = C13DDB182198990B0079042F /* NASA_JSON_Stub.json */; };
+		C13DDB1B2198A0990079042F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB1A2198A0990079042F /* MessageView.swift */; };
 		C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C13DDB16219895950079042F /* HTTPServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServiceTests.swift; sourceTree = "<group>"; };
 		C13DDB182198990B0079042F /* NASA_JSON_Stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NASA_JSON_Stub.json; sourceTree = "<group>"; };
+		C13DDB1A2198A0990079042F /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +208,7 @@
 			children = (
 				C117D29B2196F9A000D5855B /* ImageCell.swift */,
 				C117D2E5219734BF00D5855B /* BackButton.swift */,
+				C13DDB1A2198A0990079042F /* MessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */,
 				C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */,
 				C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */,
+				C13DDB1B2198A0990079042F /* MessageView.swift in Sources */,
 				C117D2E6219734BF00D5855B /* BackButton.swift in Sources */,
 				C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */,
 				C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */,
@@ -595,6 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NBHGMCQ443;
 				INFOPLIST_FILE = NASA_Images/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,6 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NBHGMCQ443;
 				INFOPLIST_FILE = NASA_Images/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

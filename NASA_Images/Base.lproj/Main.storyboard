@@ -95,21 +95,55 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rt-hX-CaR" customClass="MessageView" customModule="WeatherApp_FuturePlatforms" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="s0j-3b-avF">
+                                        <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-9i-JFf">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Nn4-GV-ncq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.84697360440000002" green="0.90240158479999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="s0j-3b-avF" firstAttribute="centerX" secondItem="2rt-hX-CaR" secondAttribute="centerX" id="FUB-Ge-eLl"/>
+                                    <constraint firstItem="s0j-3b-avF" firstAttribute="centerY" secondItem="2rt-hX-CaR" secondAttribute="centerY" id="IE1-dl-hZ3"/>
+                                    <constraint firstItem="s0j-3b-avF" firstAttribute="top" secondItem="bTU-9i-JFf" secondAttribute="bottom" constant="10" id="Sqd-9y-hQ6"/>
+                                    <constraint firstAttribute="trailing" secondItem="bTU-9i-JFf" secondAttribute="trailing" id="f18-RY-lBY"/>
+                                    <constraint firstItem="bTU-9i-JFf" firstAttribute="leading" secondItem="2rt-hX-CaR" secondAttribute="leading" id="fQE-tZ-fPM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="s0j-3b-avF" id="Z4Y-xZ-djc"/>
+                                    <outlet property="messageLabel" destination="bTU-9i-JFf" id="yU8-pe-98o"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rlF-Zs-ovQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1yK-iK-GS9"/>
                             <constraint firstItem="rlF-Zs-ovQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="64H-xI-XRQ"/>
+                            <constraint firstItem="2rt-hX-CaR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8Dd-QH-uLU"/>
+                            <constraint firstItem="2rt-hX-CaR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DHg-Oc-jdT"/>
                             <constraint firstItem="en8-kk-Di8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fp0-Ne-3oo"/>
                             <constraint firstItem="en8-kk-Di8" firstAttribute="top" secondItem="rlF-Zs-ovQ" secondAttribute="bottom" id="KxR-NP-mVT"/>
                             <constraint firstItem="rlF-Zs-ovQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PvY-6c-mL2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="en8-kk-Di8" secondAttribute="trailing" id="Sqd-Dx-IhX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2rt-hX-CaR" secondAttribute="bottom" id="UbM-F1-m9v"/>
+                            <constraint firstItem="2rt-hX-CaR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="agK-ge-IJq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="en8-kk-Di8" secondAttribute="bottom" id="mLa-cY-fHR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="The Milky Way" id="rUT-bS-1tF"/>
                     <connections>
+                        <outlet property="messageView" destination="2rt-hX-CaR" id="aw9-8e-jzk"/>
                         <outlet property="navBarTitle" destination="ETM-QC-0fp" id="zRh-5G-TJ4"/>
                         <outlet property="tableView" destination="en8-kk-Di8" id="mYu-30-qPw"/>
                         <segue destination="8gI-te-Q0m" kind="show" identifier="showImageDetailsSegue" id="beu-Cx-ebH"/>
