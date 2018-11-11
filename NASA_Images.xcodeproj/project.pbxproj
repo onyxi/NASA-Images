@@ -13,7 +13,7 @@
 		C117D26A2196EA5900D5855B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C117D2682196EA5900D5855B /* Main.storyboard */; };
 		C117D26C2196EA5A00D5855B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C117D26B2196EA5A00D5855B /* Assets.xcassets */; };
 		C117D26F2196EA5A00D5855B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C117D26D2196EA5A00D5855B /* LaunchScreen.storyboard */; };
-		C117D27A2196EA5B00D5855B /* NASA_ImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2792196EA5B00D5855B /* NASA_ImagesTests.swift */; };
+		C117D27A2196EA5B00D5855B /* ImageCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2792196EA5B00D5855B /* ImageCellViewModelTests.swift */; };
 		C117D2852196EA5B00D5855B /* NASA_ImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2842196EA5B00D5855B /* NASA_ImagesUITests.swift */; };
 		C117D2992196EF3800D5855B /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2972196EF3800D5855B /* HTTPService.swift */; };
 		C117D29A2196EF3800D5855B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2982196EF3800D5855B /* Constants.swift */; };
@@ -24,6 +24,9 @@
 		C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E32197330700D5855B /* ImageDetailsViewController.swift */; };
 		C117D2E6219734BF00D5855B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E5219734BF00D5855B /* BackButton.swift */; };
 		C117D2EA219754E800D5855B /* ImageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */; };
+		C13DDB1521987F280079042F /* ImageDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */; };
+		C13DDB17219895950079042F /* HTTPServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB16219895950079042F /* HTTPServiceTests.swift */; };
+		C13DDB192198990B0079042F /* NASA_JSON_Stub.json in Resources */ = {isa = PBXBuildFile; fileRef = C13DDB182198990B0079042F /* NASA_JSON_Stub.json */; };
 		C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +59,7 @@
 		C117D26E2196EA5A00D5855B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C117D2702196EA5A00D5855B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C117D2752196EA5B00D5855B /* NASA_ImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASA_ImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C117D2792196EA5B00D5855B /* NASA_ImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASA_ImagesTests.swift; sourceTree = "<group>"; };
+		C117D2792196EA5B00D5855B /* ImageCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModelTests.swift; sourceTree = "<group>"; };
 		C117D27B2196EA5B00D5855B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C117D2802196EA5B00D5855B /* NASA_ImagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASA_ImagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C117D2842196EA5B00D5855B /* NASA_ImagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASA_ImagesUITests.swift; sourceTree = "<group>"; };
@@ -70,6 +73,9 @@
 		C117D2E32197330700D5855B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDetailsViewController.swift; path = ../../../../.Trash/ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		C117D2E5219734BF00D5855B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModel.swift; sourceTree = "<group>"; };
+		C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		C13DDB16219895950079042F /* HTTPServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServiceTests.swift; sourceTree = "<group>"; };
+		C13DDB182198990B0079042F /* NASA_JSON_Stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NASA_JSON_Stub.json; sourceTree = "<group>"; };
 		C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +155,10 @@
 		C117D2782196EA5B00D5855B /* NASA_ImagesTests */ = {
 			isa = PBXGroup;
 			children = (
-				C117D2792196EA5B00D5855B /* NASA_ImagesTests.swift */,
+				C117D2792196EA5B00D5855B /* ImageCellViewModelTests.swift */,
+				C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */,
+				C13DDB16219895950079042F /* HTTPServiceTests.swift */,
+				C13DDB182198990B0079042F /* NASA_JSON_Stub.json */,
 				C117D27B2196EA5B00D5855B /* Info.plist */,
 			);
 			path = NASA_ImagesTests;
@@ -335,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13DDB192198990B0079042F /* NASA_JSON_Stub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +422,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C117D27A2196EA5B00D5855B /* NASA_ImagesTests.swift in Sources */,
+				C13DDB1521987F280079042F /* ImageDetailsViewModelTests.swift in Sources */,
+				C117D27A2196EA5B00D5855B /* ImageCellViewModelTests.swift in Sources */,
+				C13DDB17219895950079042F /* HTTPServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

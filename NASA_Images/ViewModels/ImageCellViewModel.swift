@@ -13,14 +13,12 @@ class ImageCellViewModel {
     
     let imageURL: URL!
     let title: String!
-    let description: String!
     let centerAndDate: String!
     
     // Initializer uses helper methods to transform given NASAImageData and assign produced values to self
     init(imageData: NASAImageData) {
         self.imageURL = ImageCellViewModel.buildImageUrl(from: imageData.imageURLString)
         self.title = imageData.title
-        self.description = imageData.description
         self.centerAndDate = ImageCellViewModel.buildCenterAndDateString(from: imageData.center, and: imageData.dateCreated)
     }
 

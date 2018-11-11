@@ -41,8 +41,7 @@ class ImageDetailsViewModel {
     // This method builds a formatted String object from given NASA center String
     private static func buildCenterString(from center: String) -> NSAttributedString {
         let centerLabelString = "Center: \(center)"
-        let attrs = [NSAttributedString.Key.font:
-            UIFont.boldSystemFont(ofSize: 15.0)]
+        let attrs = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15.0)]
         
         // make 'Center:' part of String bold
         let centerLabelAttributedString = NSMutableAttributedString(string: centerLabelString)
