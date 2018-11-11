@@ -27,9 +27,6 @@
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
-                                <items>
-                                    <navigationItem title="Title" id="ETM-QC-0fp"/>
-                                </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="en8-kk-Di8">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
@@ -95,7 +92,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rt-hX-CaR" customClass="MessageView" customModule="WeatherApp_FuturePlatforms" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rt-hX-CaR" customClass="MessageView" customModule="NASA_Images" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="s0j-3b-avF">
@@ -141,17 +138,88 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="The Milky Way" id="rUT-bS-1tF"/>
+                    <navigationItem key="navigationItem" title="The Milky Way" id="rUT-bS-1tF">
+                        <barButtonItem key="backBarButtonItem" title=" " id="BWJ-HK-2mZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="3Fn-q0-E4o">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="BYZ-38-t0r" id="cru-uu-wN3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageView" destination="2rt-hX-CaR" id="aw9-8e-jzk"/>
-                        <outlet property="navBarTitle" destination="ETM-QC-0fp" id="zRh-5G-TJ4"/>
                         <outlet property="tableView" destination="en8-kk-Di8" id="mYu-30-qPw"/>
                         <segue destination="8gI-te-Q0m" kind="show" identifier="showImageDetailsSegue" id="beu-Cx-ebH"/>
+                        <segue destination="8aa-Ff-EG8" kind="show" identifier="showSearchParametersVCSegue" id="af0-jn-uME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2954.4000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Search Parameters-->
+        <scene sceneID="o81-P1-Xt3">
+            <objects>
+                <viewController storyboardIdentifier="searchParametersViewController" id="8aa-Ff-EG8" customClass="SearchParametersViewController" customModule="NASA_Images" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6g6-Oq-zUb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCZ-mi-c8r" customClass="SearchButton" customModule="NASA_Images" customModuleProvider="target">
+                                <rect key="frame" x="112.5" y="213" width="150" height="35"/>
+                                <color key="backgroundColor" red="0.18261988414694921" green="0.34261644573033723" blue="0.55396484374999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AH1-uH-TxP"/>
+                                    <constraint firstAttribute="height" constant="35" id="eJ7-vu-ild"/>
+                                </constraints>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="8aa-Ff-EG8" eventType="touchUpInside" id="Zem-cP-7OS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phr-Zk-gct">
+                                <rect key="frame" x="62.5" y="133" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0kB-Pu-oZe"/>
+                                    <constraint firstAttribute="width" constant="250" id="jmJ-dk-QZb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for NASA images related to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTw-yL-dWD">
+                                <rect key="frame" x="20" y="104" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DYc-u7-cfU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="phr-Zk-gct" firstAttribute="top" secondItem="MTw-yL-dWD" secondAttribute="bottom" constant="8" id="6q3-Y2-qT2"/>
+                            <constraint firstItem="MTw-yL-dWD" firstAttribute="leading" secondItem="kO0-GI-Ryt" secondAttribute="leading" constant="20" id="QT1-yN-dHo"/>
+                            <constraint firstItem="kO0-GI-Ryt" firstAttribute="trailing" secondItem="MTw-yL-dWD" secondAttribute="trailing" constant="20" id="d1H-92-ok1"/>
+                            <constraint firstItem="MTw-yL-dWD" firstAttribute="top" secondItem="kO0-GI-Ryt" secondAttribute="top" constant="40" id="hp0-Nc-lod"/>
+                            <constraint firstItem="phr-Zk-gct" firstAttribute="centerX" secondItem="6g6-Oq-zUb" secondAttribute="centerX" id="tq0-k5-EKG"/>
+                            <constraint firstItem="nCZ-mi-c8r" firstAttribute="top" secondItem="phr-Zk-gct" secondAttribute="bottom" constant="50" id="ycc-Qh-cVa"/>
+                            <constraint firstItem="nCZ-mi-c8r" firstAttribute="centerX" secondItem="6g6-Oq-zUb" secondAttribute="centerX" id="yuv-Eo-zbp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kO0-GI-Ryt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Parameters" id="xGU-Jz-Pqb"/>
+                    <connections>
+                        <outlet property="searchTermTextField" destination="phr-Zk-gct" id="N1K-0Y-5qu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqB-10-PSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3727" y="-333"/>
         </scene>
         <!--ImageDetailsView-->
         <scene sceneID="Ltg-n4-Kbs">
@@ -276,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkR-jj-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4047.1999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="4241" y="400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sQ1-qP-T6v">

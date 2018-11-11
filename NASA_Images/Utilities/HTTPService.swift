@@ -26,10 +26,10 @@ class HTTPService {
     var delegate: HTTPServiceDelegate?
     
     // This method fetches data from an API. Fetched data is parsed to JSON format before being packaged and passed back to the delegate as a defined object.
-    func getData() {
+    func getData(with parameters: SearchParameters) {
         
         // Build http request using Alamofire:
-        Alamofire.request("https://images-api.nasa.gov/search?q=milky%20way&media_type=image&year_start=2017&year_end=2017")
+        Alamofire.request("https://images-api.nasa.gov/search?q=\(parameters.searchString!)&media_type=image&year_start=2017&year_end=2017")
             
             // handle repsonse as JSON
             .responseJSON { response in

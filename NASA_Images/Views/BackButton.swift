@@ -35,8 +35,4 @@ class BackButton: UIButton {
         context.strokePath()
     }
  
-    
-    
-    
-
 }

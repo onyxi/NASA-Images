@@ -9,11 +9,10 @@
 import UIKit
 
 // This class handles lifecycle events for the app's main 'Image List' view
-class ImageListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HTTPServiceDelegate, ImageCellDelegate {
+class ImageListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HTTPServiceDelegate, ImageCellDelegate, SearchParametersDelegate {
     
 
     // UI Outlets:
-    @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageView: MessageView!
     
@@ -23,6 +22,8 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     var imageCellViewModels = [ImageCellViewModel]()
     
     var httpService: HTTPService?
+    
+    var searchParameters = SearchParameters(searchString: "Milky Way")
     
     // When viewController loads configure tableView and httpService instances before requesting to download new data
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     func getImagesData(){
         messageView.setMessageLoadingData()
         messageView.show()
-        httpService?.getData()
+        httpService?.getData(with: searchParameters)
     }
     
     
@@ -66,10 +67,12 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // instanciate and assign ViewModels from results, and reload table
         imagesData = responseImagesData
+        imageCellViewModels.removeAll()
         for imageData in responseImagesData {
             imageCellViewModels.append(ImageCellViewModel(imageData: imageData))
         }
         tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         messageView.hide()
     
     }
@@ -133,13 +136,7 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    // This method sets the NavigationBar title before the Viewcontroller is displayed
-    override func viewWillAppear(_ animated: Bool) {
-       navBarTitle.title = "The Milky Way"
-    }
 
-    
 
     
     // This method displays an apprporiate alert to the user - based on the type of a given Error
@@ -171,8 +168,27 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
+    // This method present the SearchParametersViewController when the user taps the 'search' icon/item in the navbar, setting this ViewController as its delegate 
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        
+        // get destination vc
+        guard
+            let searchParametersViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchParametersViewController") as? SearchParametersViewController,
+            let navigator = navigationController
+            else { return }
+        
+        // set destination vc properties and present here:
+        searchParametersViewController.delegate = self
+        navigator.pushViewController(searchParametersViewController, animated: true)
+        
+    }
     
-    
+    // This method takes a new set of SearchParameters, assigns them to this ViewController's scope and calls the getImageData() method to begin the process for requesting data from the API
+    func didSelectSearchParameters(parameters: SearchParameters) {
+        navigationItem.title = "Custom Image Search"
+        searchParameters = parameters
+        getImagesData()
+    }
     
 }
 
