@@ -24,6 +24,7 @@
 		C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E32197330700D5855B /* ImageDetailsViewController.swift */; };
 		C117D2E6219734BF00D5855B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E5219734BF00D5855B /* BackButton.swift */; };
 		C117D2EA219754E800D5855B /* ImageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */; };
+		C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C117D2E32197330700D5855B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDetailsViewController.swift; path = ../../../../.Trash/ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		C117D2E5219734BF00D5855B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModel.swift; sourceTree = "<group>"; };
+		C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				C117D2DB2197119B00D5855B /* NASAImageData.swift */,
+				C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				C117D2992196EF3800D5855B /* HTTPService.swift in Sources */,
 				C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */,
 				C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */,
+				C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */,
 				C117D2E6219734BF00D5855B /* BackButton.swift in Sources */,
 				C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */,
 				C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */,

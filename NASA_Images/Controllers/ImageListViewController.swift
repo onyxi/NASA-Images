@@ -9,7 +9,8 @@
 import UIKit
 
 // This class handles lifecycle events for the app's main 'Image List' view
-class ImageListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ImageCellDelegate {
+class ImageListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HTTPServiceDelegate, ImageCellDelegate {
+    
 
     // UI Outlets:
     @IBOutlet weak var navBarTitle: UINavigationItem!
@@ -19,24 +20,43 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     var imagesData = [NASAImageData]()
     var imageCellViewModels = [ImageCellViewModel]()
     
-    // When viewController loads configure tableView and request to download new data
+    var httpService: HTTPService?
+    
+    // When viewController loads configure tableView and httpService instance before requesting to download new data
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
+        httpService = HTTPService()
+        httpService?.delegate = self
+        
         getImagesData()
     }
     
+    
     // This method requests new data for the tableView
     func getImagesData(){
-        imagesData = DevData().NASAImagesData
-        for imageData in imagesData {
-            imageCellViewModels.append(ImageCellViewModel(imageData: imageData))
+        
+        httpService?.getData()
+        
+    }
+    
+    
+    // This method handles the response from a request to the HTTPService class. If data was successfully returned, it is assigned to this ViewController's main scope and used to instantiate ImageCellViewModel objects, which are appended to the main scope's imageCellViewModels array. The tableView is finally called to reload its data - drawing from the newly created NASAImageDataViewModel objects.
+    func finishedHTTPDataRequest(err: HTTPServiceError?, data: AnyObject?) {
+        
+        if let responseImagesData = data as? [NASAImageData] {
+            imagesData = responseImagesData
+            for imageData in responseImagesData {
+                imageCellViewModels.append(ImageCellViewModel(imageData: imageData))
+            }
         }
         tableView.reloadData()
     }
+    
+    
     
     // This method registers a user's tap on a tableView cell and shows image details in a presented ViewController
     func imageCellTapped(row: Int) {
@@ -74,6 +94,7 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     // This method defines the number of cells in the tableView - set to the number of objects in this viewController's array of ImageCellViewModel objects, plus 1 to account for the padding at the top of the tableView (or set to zero if the array is empty)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if imageCellViewModels.isEmpty {
+            
             return 0
         } else {
             return imageCellViewModels.count + 1
@@ -87,6 +108,13 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             return 250
         }
+    }
+
+    
+    
+    // This method removes the grey 'selection' formatting when cell's are tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // This method sets the NavigationBar title before the Viewcontroller is displayed

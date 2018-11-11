@@ -15,7 +15,7 @@ class ImageDetailsViewModel {
     let title: String!
     let center: NSAttributedString!
     let date: NSAttributedString!
-    let description: String!
+    let description: NSAttributedString!
     
     
     // Initializer uses helper methods to transform given NASAImageData and assign produced values to self
@@ -24,7 +24,7 @@ class ImageDetailsViewModel {
         self.title = imageData.title
         self.center = ImageDetailsViewModel.buildCenterString(from: imageData.center)
         self.date = ImageDetailsViewModel.buildDateString(from: imageData.dateCreated)
-        self.description = imageData.description
+        self.description = ImageDetailsViewModel.getDescriptionAttributedString(from: imageData.description)
     }
     
     
@@ -68,4 +68,26 @@ class ImageDetailsViewModel {
     
     
     
+    // This method returns a formatted AttributedString to represent html code as it should be seen in a web view - with html tags removed and their effect displayed instead.
+    private static func getDescriptionAttributedString(from desc: String) -> NSAttributedString {
+
+        // get data representation of given String
+        guard let data = desc.data(using: String.Encoding.unicode) else {
+            return NSAttributedString(string: "No valid description")
+        }
+        
+        // create mutable AttributedString using data representation of given String - parsing text as html
+        let attrStr = try? NSMutableAttributedString( // do catch
+            data: data,
+            options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
+            documentAttributes: nil)
+        
+        // define font attributes for AttributedString
+        let attrs = [NSAttributedString.Key.font:
+            UIFont.systemFont(ofSize: 15.0)]
+        
+        // add font attributes to the AttributedString and return to caller
+        attrStr?.addAttributes(attrs, range: NSRange(location: 0, length: attrStr?.length ?? 0))
+        return attrStr!
+    }
 }
