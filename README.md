@@ -18,4 +18,4 @@ Improvements
 - Image descriptions could be developed to provide Web functionality (WebKit) - so that hyperlinks are opened in a web-view/appropriate app. At the moment, hyperlinks to external sites/apps are recognised in the HTML text and displayed appropriately, but the user cannot yet interact with them.
 
 Known Bugs
-1.If, in the image-list screen, the device is in landscape mode when the user taps an image to view its details, then on the details screen if the device is rotated to portrait mode, the description label will extend off the bottom of the view (if long enough). The scrollViewContainer on the ImageDetailsViewController needs to be resized appropriately if the device changes orientation.
+ 1.If, in the image-list screen, the device is in landscape mode when the user taps an image to view its details, then on the details screen if the device is rotated to portrait mode, the description label will extend off the bottom of the view (if long enough). The scrollViewContainer on the ImageDetailsViewController needs to be resized appropriately if the device changes orientation.
