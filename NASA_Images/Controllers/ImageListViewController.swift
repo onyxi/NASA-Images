@@ -23,7 +23,7 @@ class ImageListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var httpService: HTTPService?
     
-    var searchParameters = SearchParameters(searchString: "Milky Way")
+    var searchParameters = SearchParameters(searchString: "Milky Way", fromYear: 2017, toYear: 2018)
     
     // When viewController loads configure tableView and httpService instances before requesting to download new data
     override func viewDidLoad() {

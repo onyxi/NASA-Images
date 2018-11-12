@@ -12,10 +12,14 @@ import Foundation
 struct SearchParameters {
     
     let searchString: String!
+    let fromYear: Int!
+    let toYear: Int!
     
     // This initializer assigns a given string to self via the encoding function below
-    init(searchString: String) {
+    init(searchString: String, fromYear: Int, toYear: Int) {
         self.searchString = SearchParameters.getEncodedSearchString(from: searchString)
+        self.fromYear = fromYear
+        self.toYear = toYear
     }
     
     // This method ensures that a given search string is cleaned and trimmed of white space - using '%20' encoding for spaces between search terms

@@ -29,7 +29,7 @@ class HTTPService {
     func getData(with parameters: SearchParameters) {
         
         // Build http request using Alamofire:
-        Alamofire.request("https://images-api.nasa.gov/search?q=\(parameters.searchString!)&media_type=image&year_start=2017&year_end=2017")
+        Alamofire.request("https://images-api.nasa.gov/search?q=\(parameters.searchString!)&media_type=image&year_start=\(parameters.fromYear!)&year_end=\(parameters.toYear!)")
             
             // handle repsonse as JSON
             .responseJSON { response in

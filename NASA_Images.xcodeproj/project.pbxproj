@@ -32,6 +32,7 @@
 		C1A8E7A92198D28C00CD56AF /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8E7A82198D28C00CD56AF /* SearchParameters.swift */; };
 		C1A8E7AB2198D31D00CD56AF /* SearchParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8E7AA2198D31D00CD56AF /* SearchParametersViewController.swift */; };
 		C1A8E7AD2198E3BC00CD56AF /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8E7AC2198E3BC00CD56AF /* SearchButton.swift */; };
+		C1A8E7AF2198ECC900CD56AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8E7AE2198ECC900CD56AF /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		C1A8E7A82198D28C00CD56AF /* SearchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
 		C1A8E7AA2198D31D00CD56AF /* SearchParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParametersViewController.swift; sourceTree = "<group>"; };
 		C1A8E7AC2198E3BC00CD56AF /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		C1A8E7AE2198ECC900CD56AF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C117D2982196EF3800D5855B /* Constants.swift */,
+				C1A8E7AE2198ECC900CD56AF /* Extensions.swift */,
 				C117D2972196EF3800D5855B /* HTTPService.swift */,
 				C117D2DD219713D800D5855B /* DevData.swift */,
 			);
@@ -429,6 +432,7 @@
 				C117D2EA219754E800D5855B /* ImageDetailsViewModel.swift in Sources */,
 				C117D29A2196EF3800D5855B /* Constants.swift in Sources */,
 				C117D29C2196F9A000D5855B /* ImageCell.swift in Sources */,
+				C1A8E7AF2198ECC900CD56AF /* Extensions.swift in Sources */,
 				C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */,
 				C1A8E7AD2198E3BC00CD56AF /* SearchButton.swift in Sources */,
 			);
