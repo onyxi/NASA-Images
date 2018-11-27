@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0DD9EEB6D554BAE9C60198CA /* Pods_NASA_Images.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61521C61EFD9267F6C7B5505 /* Pods_NASA_Images.framework */; };
 		C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2642196EA5900D5855B /* AppDelegate.swift */; };
-		C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2662196EA5900D5855B /* ImageListViewController.swift */; };
 		C117D26A2196EA5900D5855B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C117D2682196EA5900D5855B /* Main.storyboard */; };
 		C117D26C2196EA5A00D5855B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C117D26B2196EA5A00D5855B /* Assets.xcassets */; };
 		C117D26F2196EA5A00D5855B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C117D26D2196EA5A00D5855B /* LaunchScreen.storyboard */; };
@@ -21,13 +20,14 @@
 		C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DB2197119B00D5855B /* NASAImageData.swift */; };
 		C117D2DE219713D800D5855B /* DevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DD219713D800D5855B /* DevData.swift */; };
 		C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */; };
-		C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E32197330700D5855B /* ImageDetailsViewController.swift */; };
 		C117D2E6219734BF00D5855B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E5219734BF00D5855B /* BackButton.swift */; };
 		C117D2EA219754E800D5855B /* ImageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */; };
 		C13DDB1521987F280079042F /* ImageDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */; };
 		C13DDB17219895950079042F /* HTTPServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB16219895950079042F /* HTTPServiceTests.swift */; };
 		C13DDB192198990B0079042F /* NASA_JSON_Stub.json in Resources */ = {isa = PBXBuildFile; fileRef = C13DDB182198990B0079042F /* NASA_JSON_Stub.json */; };
 		C13DDB1B2198A0990079042F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13DDB1A2198A0990079042F /* MessageView.swift */; };
+		C143DC8A21AD55A90040136B /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C143DC8921AD55A90040136B /* ImageListViewController.swift */; };
+		C1645F9D21AD573500D9F503 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1645F9C21AD573500D9F503 /* ImageDetailsViewController.swift */; };
 		C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */; };
 		C1A8E7A92198D28C00CD56AF /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8E7A82198D28C00CD56AF /* SearchParameters.swift */; };
 		C1A8E7AB2198D31D00CD56AF /* SearchParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8E7AA2198D31D00CD56AF /* SearchParametersViewController.swift */; };
@@ -58,7 +58,6 @@
 		9953C26E9294C8B7B0500DAB /* Pods-NASA_Images.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA_Images.release.xcconfig"; path = "Pods/Target Support Files/Pods-NASA_Images/Pods-NASA_Images.release.xcconfig"; sourceTree = "<group>"; };
 		C117D2612196EA5800D5855B /* NASA_Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASA_Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C117D2642196EA5900D5855B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C117D2662196EA5900D5855B /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		C117D2692196EA5900D5855B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C117D26B2196EA5A00D5855B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C117D26E2196EA5A00D5855B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,13 +74,14 @@
 		C117D2DB2197119B00D5855B /* NASAImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImageData.swift; sourceTree = "<group>"; };
 		C117D2DD219713D800D5855B /* DevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevData.swift; sourceTree = "<group>"; };
 		C117D2DF21971AE100D5855B /* ImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
-		C117D2E32197330700D5855B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDetailsViewController.swift; path = ../../../../.Trash/ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		C117D2E5219734BF00D5855B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		C117D2E9219754E800D5855B /* ImageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModel.swift; sourceTree = "<group>"; };
 		C13DDB1421987F280079042F /* ImageDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C13DDB16219895950079042F /* HTTPServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServiceTests.swift; sourceTree = "<group>"; };
 		C13DDB182198990B0079042F /* NASA_JSON_Stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NASA_JSON_Stub.json; sourceTree = "<group>"; };
 		C13DDB1A2198A0990079042F /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		C143DC8921AD55A90040136B /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		C1645F9C21AD573500D9F503 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		C179DFD521984B8C00E8F3A7 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		C1A8E7A82198D28C00CD56AF /* SearchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
 		C1A8E7AA2198D31D00CD56AF /* SearchParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParametersViewController.swift; sourceTree = "<group>"; };
@@ -186,8 +186,8 @@
 		C117D2922196EEAB00D5855B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C117D2662196EA5900D5855B /* ImageListViewController.swift */,
-				C117D2E32197330700D5855B /* ImageDetailsViewController.swift */,
+				C143DC8921AD55A90040136B /* ImageListViewController.swift */,
+				C1645F9C21AD573500D9F503 /* ImageDetailsViewController.swift */,
 				C1A8E7AA2198D31D00CD56AF /* SearchParametersViewController.swift */,
 			);
 			path = Controllers;
@@ -421,11 +421,10 @@
 				C117D2DE219713D800D5855B /* DevData.swift in Sources */,
 				C1A8E7AB2198D31D00CD56AF /* SearchParametersViewController.swift in Sources */,
 				C117D2992196EF3800D5855B /* HTTPService.swift in Sources */,
-				C117D2672196EA5900D5855B /* ImageListViewController.swift in Sources */,
-				C117D2E42197330700D5855B /* ImageDetailsViewController.swift in Sources */,
 				C179DFD621984B8C00E8F3A7 /* JSONResponse.swift in Sources */,
 				C1A8E7A92198D28C00CD56AF /* SearchParameters.swift in Sources */,
 				C13DDB1B2198A0990079042F /* MessageView.swift in Sources */,
+				C143DC8A21AD55A90040136B /* ImageListViewController.swift in Sources */,
 				C117D2E6219734BF00D5855B /* BackButton.swift in Sources */,
 				C117D2652196EA5900D5855B /* AppDelegate.swift in Sources */,
 				C117D2E021971AE100D5855B /* ImageCellViewModel.swift in Sources */,
@@ -435,6 +434,7 @@
 				C1A8E7AF2198ECC900CD56AF /* Extensions.swift in Sources */,
 				C117D2DC2197119B00D5855B /* NASAImageData.swift in Sources */,
 				C1A8E7AD2198E3BC00CD56AF /* SearchButton.swift in Sources */,
+				C1645F9D21AD573500D9F503 /* ImageDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

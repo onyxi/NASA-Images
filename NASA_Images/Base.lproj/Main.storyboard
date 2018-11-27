@@ -337,7 +337,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve5-Hy-gzp">
-                                                <rect key="frame" x="20" y="372" width="88" height="20.5"/>
+                                                <rect key="frame" x="20" y="372" width="335" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -346,7 +346,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ve5-Hy-gzp" secondAttribute="trailing" constant="20" id="0Og-tW-Swv"/>
+                                            <constraint firstAttribute="trailing" secondItem="ve5-Hy-gzp" secondAttribute="trailing" constant="20" id="0Og-tW-Swv"/>
                                             <constraint firstItem="8IN-8H-huf" firstAttribute="top" secondItem="3YS-ZC-jY8" secondAttribute="bottom" constant="20" id="6iD-OQ-QxN"/>
                                             <constraint firstItem="ve5-Hy-gzp" firstAttribute="leading" secondItem="s22-JA-5Fe" secondAttribute="leading" constant="20" id="73g-fc-CFn"/>
                                             <constraint firstItem="3YS-ZC-jY8" firstAttribute="top" secondItem="uPH-Bb-JZS" secondAttribute="bottom" constant="20" id="87t-Pi-Fum"/>
@@ -401,13 +401,13 @@
                         <viewLayoutGuide key="safeArea" id="Hia-VS-ipS"/>
                     </view>
                     <connections>
-                        <outlet property="NASAImageView" destination="uPH-Bb-JZS" id="Qhe-nz-D2w"/>
-                        <outlet property="centerLabel" destination="8IN-8H-huf" id="RN8-7g-f0G"/>
-                        <outlet property="dateCreatedLabel" destination="d6L-H6-kEf" id="Jtg-GP-MyH"/>
-                        <outlet property="descriptionLabel" destination="ve5-Hy-gzp" id="sTU-ge-7dN"/>
+                        <outlet property="centerLabel" destination="8IN-8H-huf" id="DmI-ud-i3z"/>
+                        <outlet property="dateCreatedLabel" destination="d6L-H6-kEf" id="STd-6f-gw5"/>
+                        <outlet property="descriptionLabel" destination="ve5-Hy-gzp" id="Saf-4J-cwg"/>
+                        <outlet property="imageView" destination="uPH-Bb-JZS" id="Kvp-bU-0hv"/>
                         <outlet property="scrollViewContainer" destination="s22-JA-5Fe" id="TsP-us-Mag"/>
                         <outlet property="scrollViewHeightConstraint" destination="pVd-BU-03R" id="pCJ-pI-Fa4"/>
-                        <outlet property="titleLabel" destination="3YS-ZC-jY8" id="UgS-72-VKx"/>
+                        <outlet property="titleLabel" destination="3YS-ZC-jY8" id="ezM-6V-qm5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkR-jj-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
